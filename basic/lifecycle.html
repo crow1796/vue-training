@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VueJS Training</title>
+</head>
+<body>
+	<div id="app">
+		{{ name }}
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				name: null
+			},
+			beforeCreate: function(){
+				console.log('Before Create')
+			},
+			created: function(){
+				console.log('Created')
+			},
+			beforeMount: function(){
+				console.log('Before Mount')
+			},
+			mounted: function(){
+				console.log('Mounted')
+				this.name = 'test'
+				setTimeout(function(context){
+					return function(){
+						context.$destroy()
+					}
+				}(this), 1000)
+			},
+			beforeUpdate: function(){
+				console.log('Before Update')
+			},
+			updated: function(){
+				console.log('Updated')
+			},
+			beforeDestroy: function(){
+				console.log('Before Destroy')
+			},
+			destroyed: function(){
+				console.log('Destroyed')
+			}
+		})
+	</script>
+</body>
+</html>

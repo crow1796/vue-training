@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VueJS Training</title>
+</head>
+<body>
+	<div id="app">
+		<div>
+			<label for="name">Name: </label>
+			<input type="text" name="name" id="name" v-model="name">
+			{{ name }}
+		</div>
+		<div>
+			<label for="name">Lazy Name: </label>
+			<input type="text" name="name" id="name" v-model.lazy="lazyName">
+			{{ lazyName }}
+		</div>
+		<div>
+			<label for="age">Age: </label>
+			<input type="number" name="age" id="age" v-model.number="age">
+			{{ typeof age }}
+		</div>
+		<div>
+			<label for="trim">Trim: </label>
+			<input type="text" name="trim" id="trim" v-model.trim="trim">
+			{{ trim.length }}
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				name: null,
+				lazyName: null,
+				age: null,
+				trim: ''
+			}
+		})
+	</script>
+</body>
+</html>

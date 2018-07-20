@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VueJS Training</title>
+</head>
+<body>
+	<div id="app">
+		<div v-if="age > 18">Mamorj</div>
+		<div v-else-if="age == 18">Wow</div>
+		<div v-else>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis voluptatem soluta ea sit, eligendi, explicabo omnis sequi quidem deserunt adipisci nesciunt earum autem facere officiis alias, at maxime excepturi, aut.</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				age: 17
+			}
+		})
+	</script>
+</body>
+</html>
